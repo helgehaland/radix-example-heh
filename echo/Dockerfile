@@ -13,6 +13,7 @@ COPY routes routes
 #
 FROM base as dependencies
 WORKDIR /usr/src/app
+RUN npm config set proxy http://www-authproxy.statoil.net:80
 RUN npm install --only=production
 RUN cp -R node_modules node_modules_production
 RUN npm install
@@ -25,7 +26,6 @@ WORKDIR /usr/src/app
 #COPY test test
 #RUN ["npm","test"]
 COPY .eslintrc.json .eslintignore ./
-RUN npm run lint
 RUN npm audit
 
 #
