@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: ws/heh-www
+  name: heh-www
 spec:
   environments:
     - name: production
